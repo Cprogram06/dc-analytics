@@ -24,7 +24,7 @@ const Sidebar: React.FC<SidebarProps> = ({ setPage }) => {
                 <li><button onClick={() => setPage('Lumiterra-2024.html')}>Lumiterra</button></li>
                 <li><button onClick={() => setPage('Moku-2024.html')}>Moku</button></li>
                 <li><button onClick={() => setPage('Pixels-2024.html')}>Pixels</button></li>
-                <li><button onClick={() => setPage('PixelsCreator-2024.html')}>Pixels Creator</button></li>
+                {/* <li><button onClick={() => setPage('PixelsCreator-2024.html')}>Pixels Creator</button></li> */}
                 <li><button onClick={() => setPage('PlayFightLeague-2024.html')}>Play Fight League</button></li>
                 <li><button onClick={() => setPage('Ragmon-2024.html')}>Ragnarok Montster World</button></li>
                 <li><button onClick={() => setPage('Ronin Creator Discord-2024.html')}>Ronin Creator Discord</button></li>
