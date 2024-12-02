@@ -17,6 +17,9 @@ const Sidebar: React.FC<SidebarProps> = ({ setPage }) => {
             </div>
             <ul>
                 <li><button onClick={() => setPage('Axie Infinity-2024.html')}>Axie Infinity</button></li>
+                <li><button onClick={() => setPage('Axie Infinity PH-2024.html')}>Axie Infinity PH</button></li>
+                <li><button onClick={() => setPage('Axie Infinity ES-2024.html')}>Axie Infinity ES</button></li>
+                <li><button onClick={() => setPage('Axie Infinity PT-2024.html')}>Axie Infinity PT</button></li>
                 <li><button onClick={() => setPage('Apeiron-2024.html')}>Apeiron</button></li>
                 <li><button onClick={() => setPage('⚡ CyberKongz ⚡-2024.html')}>CyberKongz</button></li>
                 <li><button onClick={() => setPage('Forgotten Runes Wizard Cult-2024.html')}>Forgotten Runiverse</button></li>
