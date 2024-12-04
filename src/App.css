@@ -30,71 +30,79 @@ z-index: 0; /* Ensure it's behind the text */
 animation: scaleIn 0.5s ease forwards; /* Apply the animation */
 }
 
-/* Sidebar Container */
-.sidebar-container {
-position: relative;
-}
-
-/* Sidebar Styling */
 .sidebar {
-width: 240px;
-background: linear-gradient(135deg, #0b1a3b, #182848);
-color: white;
-padding: 20px;
-display: flex;
-flex-direction: column;
-position: fixed;
-left: 0;
-top: 0;
-bottom: 0;
-transform: translateX(0); /* Make sidebar visible by default on desktop */
-transition: transform 0.3s ease-in-out;
-z-index: 1000;
+  width: 240px; /* Wider sidebar for more space */
+  background: linear-gradient(135deg, #0b1a3b, #182848); /* Gradient background */
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-/* Sidebar when open (Mobile) */
-.sidebar-container.open .sidebar {
-transform: translateX(0); /* Slide in on mobile */
+
+.sidebar-header {
+margin-bottom: 40px; /* Space below the logo */
+position: relative; /* Required for absolute positioning of the icon */
 }
 
-/* Burger Menu Button */
-.burger-menu {
-display: none; /* Hidden by default */
-position: fixed;
-top: 15px;
-left: 15px;
-background-color: transparent;
-border: none;
-color: white;
-font-size: 2rem;
-cursor: pointer;
-z-index: 1100;
+.sidebar h2 {
+font-size: 2rem; /* Base size, scales better with rem */
+font-weight: bold;
+color: #d1d5db; /* Lighter title color */
+margin: 0; /* Remove default margin */
+position: relative; /* Ensure the title is on top of the icon */
+text-align: left; /* Left align for better aesthetics */
+text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+text-emphasis-color: 0b1a3b;
+display: inline-block; /* Make sure h2 is inline-block to match icon width */
 }
 
-/* Mobile Responsive Styles */
-@media (max-width: 768px) {
-.burger-menu {
-  display: block; /* Show burger menu on smaller screens */
+.sidebar ul {
+  list-style: none;
+  width: 100%;
 }
 
-.sidebar {
-  width: 200px; /* Adjust sidebar width on mobile */
-  transform: translateX(-100%); /* Hide sidebar off-screen by default on mobile */
+.sidebar ul li {
+  margin: 15px 0;
+  width: 100%;
 }
 
-.sidebar-container.open .sidebar {
-  transform: translateX(0); /* Slide in on mobile */
-}
-
-/* Sidebar Button Styles */
 .sidebar ul li button {
-  font-size: 1rem; /* Larger font size for easier click on mobile */
-  padding: 12px; /* Add padding for better touch targets */
-  border-radius: 6px; /* Slightly smaller border radius */
+  width: 100%;
+  padding: 8px 15px;
+  font-size: .9em;
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .sidebar ul li button:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Lighter hover effect */
+  background-color: rgba(255, 255, 255, 0.2); /* Light overlay on hover */
+}
+
+.sidebar ul li button:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3); /* Highlight active */
+}
+
+
+
+.sidebar-header {
+margin-bottom: 20px; /* Space below the logo */
+display: flex;
+justify-content: center; /* Center the logo */
+}
+
+.sidebar-logo {
+width: 100%; /* Adjust size as needed */
+max-width: 220px; /* Limit maximum width */
+height: auto; /* Maintain aspect ratio */
+animation: bounce 1s ease; /* Apply bounce animation on render */
 }
 
 /* Adjust container layout on mobile */
@@ -102,10 +110,6 @@ z-index: 1100;
   flex-direction: column; /* Stack content and sidebar on mobile */
 }
 
-.sidebar-logo {
-  max-width: 200px; /* Adjust logo size for mobile */
-}
-}
 
 /* Optional overlay when sidebar is open */
 .sidebar-container.open::before {
