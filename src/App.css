@@ -15,36 +15,6 @@ body {
     height: 100vh; /* Full viewport height */
 }
 
-.sidebar {
-    width: 240px; /* Wider sidebar for more space */
-    background: linear-gradient(135deg, #0b1a3b, #182848); /* Gradient background */
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-
-.sidebar-header {
-  margin-bottom: 40px; /* Space below the logo */
-  position: relative; /* Required for absolute positioning of the icon */
-}
-
-.sidebar h2 {
-  font-size: 2rem; /* Base size, scales better with rem */
-  font-weight: bold;
-  color: #d1d5db; /* Lighter title color */
-  margin: 0; /* Remove default margin */
-  position: relative; /* Ensure the title is on top of the icon */
-  text-align: left; /* Left align for better aesthetics */
-  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
-  text-emphasis-color: 0b1a3b;
-  display: inline-block; /* Make sure h2 is inline-block to match icon width */
-}
-
-
-
 .bar-chart-icon {
   position: absolute; /* Positioned behind the text */
   top: 50%; /* Center vertically */
@@ -58,65 +28,132 @@ body {
   animation: scaleIn 0.5s ease forwards; /* Apply the animation */
 }
 
+/* General Sidebar Styles */
+.sidebar {
+  width: 240px;
+  background: linear-gradient(135deg, #0b1a3b, #182848);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.3s ease-in-out; /* Smooth transition for responsiveness */
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d1d5db;
+  margin: 0;
+  position: relative;
+  text-align: left;
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+}
+
 .sidebar ul {
-    list-style: none;
-    width: 100%;
+  list-style: none;
+  width: 100%;
+  padding: 0; /* Reset padding */
 }
 
 .sidebar ul li {
-    margin: 15px 0;
-    width: 100%;
+  margin: 15px 0;
+  width: 100%;
 }
 
 .sidebar ul li button {
-    width: 100%;
-    padding: 8px 15px;
-    font-size: .9em;
-    color: white;
-    background-color: transparent;
-    border: none;
-    border-radius: 8px;
-    text-align: left;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  width: 100%;
+  padding: 8px 15px;
+  font-size: 0.9em;
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .sidebar ul li button:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Light overlay on hover */
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .sidebar ul li button:focus {
-    outline: none;
-    background-color: rgba(255, 255, 255, 0.3); /* Highlight active */
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+      width: 200px; /* Narrower sidebar on smaller screens */
+      padding: 15px; /* Adjust padding for smaller width */
+  }
+
+  .sidebar h2 {
+      font-size: 1.5rem; /* Smaller font size for titles */
+  }
+
+  .sidebar ul li button {
+      font-size: 0.8em; /* Adjust font size */
+      padding: 6px 12px; /* Adjust button padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+      width: 100%; /* Full width for very small screens */
+      height: auto;
+      flex-direction: row; /* Horizontal layout for smaller devices */
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .sidebar-header {
+      margin-bottom: 0;
+      flex: 1; /* Adjust alignment */
+  }
+
+  .sidebar ul {
+      display: flex; /* Horizontal menu layout */
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 0;
+  }
+
+  .sidebar ul li {
+      margin: 0; /* Remove extra margins */
+  }
+
+  .sidebar ul li button {
+      padding: 8px;
+      font-size: 0.7em; /* Smaller text for smaller devices */
+  }
+}
+
+
+
 .content {
-    flex: 1;
-    display: flex;
-    align-items: stretch;
-    justify-content: stretch;
-    padding: 0; /* Remove padding for full coverage */
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 0; /* Remove padding for full coverage */
 }
 
 .content iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
-
-.sidebar-header {
-  margin-bottom: 20px; /* Space below the logo */
-  display: flex;
-  justify-content: center; /* Center the logo */
-}
-
-.sidebar-logo {
-  width: 100%; /* Adjust size as needed */
-  max-width: 220px; /* Limit maximum width */
-  height: auto; /* Maintain aspect ratio */
-  animation: bounce 1s ease; /* Apply bounce animation on render */
-}
-
 
 @keyframes growRight {
   0% {
