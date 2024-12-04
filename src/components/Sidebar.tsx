@@ -6,28 +6,49 @@ type SidebarProps = {
 };
 
 const Sidebar: React.FC<SidebarProps> = ({ setPage }) => {
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+
+    const handleDropdownToggle = () => {
+        setDropdownOpen(!dropdownOpen); // Toggle the dropdown visibility
+    };
+
     return (
         <aside className="sidebar">
             <div className="sidebar-header">
                 <h2 style={{ position: 'relative', color: '#d1d5db' }}>
-                    <BarChartIcon className="bar-chart-icon" /> {/* Updated Bar Chart Icon */}
-                    Discord Analytics {/* Sidebar Title */}
+                    <BarChartIcon className="bar-chart-icon" />
+                    Discord Analytics
                 </h2>
             </div>
             <ul>
-                {/* Dropdown for Axie Infinity */}
+                {/* Button for Axie Infinity with dropdown */}
                 <li>
-                    <button>
+                    <button onClick={handleDropdownToggle}>
                         Axie Infinity
                     </button>
-                    <ul className="dropdown-menu">
-                        <li><button onClick={() => setPage('Axie Infinity PH-2024.html')}>Axie PH</button></li>
-                        <li><button onClick={() => setPage('Axie Infinity PT-2024.html')}>Axie PT</button></li>
-                        <li><button onClick={() => setPage('Axie Infinity ES-2024.html')}>Axie ES</button></li>
-                    </ul>
+                    {dropdownOpen && (
+                        <ul className="dropdown-menu">
+                            <li>
+                                <button onClick={() => setPage('Axie Infinity PH-2024.html')}>
+                                    Axie PH
+                                </button>
+                            </li>
+                            <li>
+                                <button onClick={() => setPage('Axie Infinity PT-2024.html')}>
+                                    Axie PT
+                                </button>
+                            </li>
+                            <li>
+                                <button onClick={() => setPage('Axie Infinity ES-2024.html')}>
+                                    Axie ES
+                                </button>
+                            </li>
+                        </ul>
+                    )}
                 </li>
-
-                {/* Other Sidebar Menu Items */}
+                <li>
+                    <button onClick={() => setPage('Apeiron-2024.html')}>Apeiron</button>
+                </li>
                 <li><button onClick={() => setPage('Apeiron-2024.html')}>Apeiron</button></li>
                 <li><button onClick={() => setPage('⚡ CyberKongz ⚡-2024.html')}>CyberKongz</button></li>
                 <li><button onClick={() => setPage('Forgotten Runes Wizard Cult-2024.html')}>Forgotten Runiverse</button></li>
@@ -47,5 +68,3 @@ const Sidebar: React.FC<SidebarProps> = ({ setPage }) => {
         </aside>
     );
 };
-
-export default Sidebar;
