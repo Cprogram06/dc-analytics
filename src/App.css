@@ -1,175 +1,154 @@
 /* src/App.css */
 
-/* General Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 .container {
-  display: flex;
-  height: 100vh; /* Full viewport height */
-}
-
-/* Styling for BarChart Icon */
-.bar-chart-icon {
-position: absolute; /* Positioned behind the text */
-top: 50%; /* Center vertically */
-left: 50%; /* Center horizontally */
-transform: translate(-50%, -50%); /* Adjust position */
-width: 100%; /* Take full width of h2 */
-height: auto; /* Maintain aspect ratio */
-max-width: 100px; /* Set a max width if needed */
-opacity: 0.2; /* Make the icon semi-transparent */
-z-index: 0; /* Ensure it's behind the text */
-animation: scaleIn 0.5s ease forwards; /* Apply the animation */
+    display: flex;
+    height: 100vh; /* Full viewport height */
 }
 
 .sidebar {
-  width: 240px; /* Wider sidebar for more space */
-  background: linear-gradient(135deg, #0b1a3b, #182848); /* Gradient background */
-  color: white;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+    width: 240px; /* Wider sidebar for more space */
+    background: linear-gradient(135deg, #0b1a3b, #182848); /* Gradient background */
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 
 .sidebar-header {
-margin-bottom: 40px; /* Space below the logo */
-position: relative; /* Required for absolute positioning of the icon */
+  margin-bottom: 40px; /* Space below the logo */
+  position: relative; /* Required for absolute positioning of the icon */
 }
 
 .sidebar h2 {
-font-size: 2rem; /* Base size, scales better with rem */
-font-weight: bold;
-color: #d1d5db; /* Lighter title color */
-margin: 0; /* Remove default margin */
-position: relative; /* Ensure the title is on top of the icon */
-text-align: left; /* Left align for better aesthetics */
-text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
-text-emphasis-color: 0b1a3b;
-display: inline-block; /* Make sure h2 is inline-block to match icon width */
+  font-size: 2rem; /* Base size, scales better with rem */
+  font-weight: bold;
+  color: #d1d5db; /* Lighter title color */
+  margin: 0; /* Remove default margin */
+  position: relative; /* Ensure the title is on top of the icon */
+  text-align: left; /* Left align for better aesthetics */
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  text-emphasis-color: 0b1a3b;
+  display: inline-block; /* Make sure h2 is inline-block to match icon width */
+}
+
+
+
+.bar-chart-icon {
+  position: absolute; /* Positioned behind the text */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust position */
+  width: 100%; /* Take full width of h2 */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100px; /* Set a max width if needed */
+  opacity: 0.2; /* Make the icon semi-transparent */
+  z-index: 0; /* Ensure it's behind the text */
+  animation: scaleIn 0.5s ease forwards; /* Apply the animation */
 }
 
 .sidebar ul {
-  list-style: none;
-  width: 100%;
+    list-style: none;
+    width: 100%;
 }
 
 .sidebar ul li {
-  margin: 15px 0;
-  width: 100%;
+    margin: 15px 0;
+    width: 100%;
 }
 
 .sidebar ul li button {
-  width: 100%;
-  padding: 8px 15px;
-  font-size: .9em;
-  color: white;
-  background-color: transparent;
-  border: none;
-  border-radius: 8px;
-  text-align: left;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    width: 100%;
+    padding: 8px 15px;
+    font-size: .9em;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .sidebar ul li button:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Light overlay on hover */
+    background-color: rgba(255, 255, 255, 0.2); /* Light overlay on hover */
 }
 
 .sidebar ul li button:focus {
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.3); /* Highlight active */
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3); /* Highlight active */
 }
 
-
-
-.sidebar-header {
-margin-bottom: 20px; /* Space below the logo */
-display: flex;
-justify-content: center; /* Center the logo */
-}
-
-.sidebar-logo {
-width: 100%; /* Adjust size as needed */
-max-width: 220px; /* Limit maximum width */
-height: auto; /* Maintain aspect ratio */
-animation: bounce 1s ease; /* Apply bounce animation on render */
-}
-
-/* Adjust container layout on mobile */
-.container {
-  flex-direction: column; /* Stack content and sidebar on mobile */
-}
-
-
-/* Optional overlay when sidebar is open */
-.sidebar-container.open::before {
-content: '';
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0, 0, 0, 0.5);
-z-index: 900;
-}
-
-/* Content Area */
 .content {
-flex: 1;
-display: flex;
-align-items: stretch;
-justify-content: stretch;
-padding: 0; /* Full coverage */
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 0; /* Remove padding for full coverage */
 }
 
 .content iframe {
-width: 100%;
-height: 100%;
-border: none;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
-/* Keyframes for Animation (Growing Bars) */
+.sidebar-header {
+  margin-bottom: 20px; /* Space below the logo */
+  display: flex;
+  justify-content: center; /* Center the logo */
+}
+
+.sidebar-logo {
+  width: 100%; /* Adjust size as needed */
+  max-width: 220px; /* Limit maximum width */
+  height: auto; /* Maintain aspect ratio */
+  animation: bounce 1s ease; /* Apply bounce animation on render */
+}
+
+
 @keyframes growRight {
-0% {
-    width: 0; /* Start with width 0 */
-    opacity: 0; /* Start invisible */
-}
-100% {
-    width: 4; /* Final width of the bars */
-    opacity: 1; /* Fully visible */
-}
+  0% {
+      width: 0; /* Start with width 0 */
+      opacity: 0; /* Start invisible */
+  }
+  100% {
+      width: 4; /* Final width of the bars */
+      opacity: 1; /* Fully visible */
+  }
 }
 
 .bar {
-transition: width 0.5s ease, opacity 0.5s ease; /* Smooth transition */
-opacity: 0; /* Initially set opacity to 0 */
+  transition: width 0.5s ease, opacity 0.5s ease; /* Smooth transition */
+  opacity: 0; /* Initially set opacity to 0 */
 }
 
 .bar1 {
-animation: growRight 0.5s ease forwards; /* Animate first bar */
+  animation: growRight 0.5s ease forwards; /* Animate first bar */
 }
 
 .bar2 {
-animation: growRight 0.5s ease forwards; /* Animate second bar */
-animation-delay: 0.1s; /* Delay for staggered effect */
+  animation: growRight 0.5s ease forwards; /* Animate second bar */
+  animation-delay: 0.1s; /* Delay for staggered effect */
 }
 
 .bar3 {
-animation: growRight 0.5s ease forwards; /* Animate third bar */
-animation-delay: 0.2s; /* Delay for staggered effect */
+  animation: growRight 0.5s ease forwards; /* Animate third bar */
+  animation-delay: 0.2s; /* Delay for staggered effect */
 }
 
 .bar4 {
-animation: growRight 0.5s ease forwards; /* Animate fourth bar */
-animation-delay: 0.3s; /* Delay for staggered effect */
+  animation: growRight 0.5s ease forwards; /* Animate fourth bar */
+  animation-delay: 0.3s; /* Delay for staggered effect */
 }
