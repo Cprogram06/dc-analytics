@@ -6,12 +6,6 @@ type SidebarProps = {
 };
 
 const Sidebar: React.FC<SidebarProps> = ({ setPage }) => {
-    // State to control dropdown visibility
-    const [isDropdownOpen, setDropdownOpen] = useState(false);
-
-    // Toggle the dropdown visibility
-    const toggleDropdown = () => setDropdownOpen(!isDropdownOpen);
-
     return (
         <aside className="sidebar">
             <div className="sidebar-header">
@@ -21,19 +15,16 @@ const Sidebar: React.FC<SidebarProps> = ({ setPage }) => {
                 </h2>
             </div>
             <ul>
-                {/* Dropdown menu for Axie Infinity */}
+                {/* Dropdown for Axie Infinity */}
                 <li>
-                    <button onClick={toggleDropdown}>
+                    <button>
                         Axie Infinity
                     </button>
-                    {isDropdownOpen && (
-                        <ul className="dropdown-menu">
-                            <li><button onClick={() => setPage('Axie Infinity-2024.html')}>Axie Infinity Main</button></li>
-                            <li><button onClick={() => setPage('Axie Infinity PH-2024.html')}>Axie PH</button></li>
-                            <li><button onClick={() => setPage('Axie Infinity PT-2024.html')}>Axie PT</button></li>
-                            <li><button onClick={() => setPage('Axie Infinity ES-2024.html')}>Axie ES</button></li>
-                        </ul>
-                    )}
+                    <ul className="dropdown-menu">
+                        <li><button onClick={() => setPage('Axie Infinity PH-2024.html')}>Axie PH</button></li>
+                        <li><button onClick={() => setPage('Axie Infinity PT-2024.html')}>Axie PT</button></li>
+                        <li><button onClick={() => setPage('Axie Infinity ES-2024.html')}>Axie ES</button></li>
+                    </ul>
                 </li>
 
                 {/* Other Sidebar Menu Items */}
