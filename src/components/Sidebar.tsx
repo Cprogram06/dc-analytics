@@ -8,9 +8,15 @@ type SidebarProps = {
 const Sidebar: React.FC<SidebarProps> = ({ setPage }) => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
-    const handleDropdownToggle = (page: string) => {
-        setPage(page); // Set the page first
+    // Function to toggle dropdown visibility
+    const handleDropdownToggle = () => {
         setDropdownOpen(!dropdownOpen); // Toggle the dropdown visibility
+    };
+
+    // Function to handle the page change and dropdown toggle
+    const handleButtonClick = (page: string) => {
+        setPage(page); // Set the page
+        setDropdownOpen(false); // Optionally, close the dropdown when the page is set
     };
 
     return (
@@ -24,48 +30,41 @@ const Sidebar: React.FC<SidebarProps> = ({ setPage }) => {
             <ul>
                 {/* Button for Axie Infinity with dropdown */}
                 <li>
-                    <button onClick={() => handleDropdownToggle('Axie Infinity-2024.html')}>
+                    <button
+                        onClick={() => {
+                            handleButtonClick('Axie Infinity-2024.html'); // Set page and close dropdown if needed
+                            handleDropdownToggle(); // Toggle dropdown visibility
+                        }}
+                    >
                         Axie Infinity
                     </button>
                     {dropdownOpen && (
                         <ul className="dropdown-menu">
                             <li>
-                                <button onClick={() => setPage('Axie Infinity PH-2024.html')}>
+                                <button onClick={() => handleButtonClick('Axie Infinity PH-2024.html')}>
                                     Axie PH
                                 </button>
                             </li>
                             <li>
-                                <button onClick={() => setPage('Axie Infinity PT-2024.html')}>
+                                <button onClick={() => handleButtonClick('Axie Infinity PT-2024.html')}>
                                     Axie PT
                                 </button>
                             </li>
                             <li>
-                                <button onClick={() => setPage('Axie Infinity ES-2024.html')}>
+                                <button onClick={() => handleButtonClick('Axie Infinity ES-2024.html')}>
                                     Axie ES
                                 </button>
                             </li>
                         </ul>
                     )}
                 </li>
+                {/* Other sidebar items */}
                 <li>
                     <button onClick={() => setPage('Apeiron-2024.html')}>Apeiron</button>
                 </li>
-                <li><button onClick={() => setPage('Apeiron-2024.html')}>Apeiron</button></li>
-                <li><button onClick={() => setPage('⚡ CyberKongz ⚡-2024.html')}>CyberKongz</button></li>
-                <li><button onClick={() => setPage('Forgotten Runes Wizard Cult-2024.html')}>Forgotten Runiverse</button></li>
-                <li><button onClick={() => setPage('Fableborne-2024.html')}>Fableborne</button></li>
-                <li><button onClick={() => setPage('Official Kaidro Channel-2024.html')}>Kaidro</button></li>
-                <li><button onClick={() => setPage('Lumiterra-2024.html')}>Lumiterra</button></li>
-                <li><button onClick={() => setPage('Moku-2024.html')}>Moku</button></li>
-                <li><button onClick={() => setPage('Pixels-2024.html')}>Pixels</button></li>
-                <li><button onClick={() => setPage('Pixel Heroes Adventure-2024.html')}>Pixel Heroes</button></li>
-                <li><button onClick={() => setPage('PlayFightLeague-2024.html')}>Play Fight League</button></li>
-                <li><button onClick={() => setPage('Ragnarok_ Monster World-2024.html')}>Ragnarok Montster World</button></li>
-                <li><button onClick={() => setPage('Ronin Creator Discord-2024.html')}>Ronin Creator Discord</button></li>
-                <li><button onClick={() => setPage('Ronin Network-2024.html')}>Ronin Network</button></li>
-                <li><button onClick={() => setPage('The Machines Arena-2024.html')}>The Machines Arena</button></li>
-                <li><button onClick={() => setPage('Wild Forest-2024.html')}>Wild Forest</button></li>
             </ul>
         </aside>
     );
 };
+
+export default Sidebar;
