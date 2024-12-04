@@ -71,11 +71,6 @@ cursor: pointer;
 z-index: 1100;
 }
 
-/* Burger Icon Transitions (Add animations if you want) */
-.burger-menu:focus {
-outline: none;
-}
-
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
 .burger-menu {
@@ -86,8 +81,24 @@ outline: none;
   width: 200px; /* Adjust sidebar width on mobile */
 }
 
+/* Sidebar Button Styles */
+.sidebar ul li button {
+  font-size: 1rem; /* Larger font size for easier click on mobile */
+  padding: 12px; /* Add padding for better touch targets */
+  border-radius: 6px; /* Slightly smaller border radius */
+}
+
+.sidebar ul li button:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Lighter hover effect */
+}
+
+/* Adjust container layout on mobile */
 .container {
   flex-direction: column; /* Stack content and sidebar on mobile */
+}
+
+.sidebar-logo {
+  max-width: 200px; /* Adjust logo size for mobile */
 }
 }
 
