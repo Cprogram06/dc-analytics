@@ -8,7 +8,8 @@ type SidebarProps = {
 const Sidebar: React.FC<SidebarProps> = ({ setPage }) => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
-    const handleDropdownToggle = () => {
+    const handleDropdownToggle = (page: string) => {
+        setPage(page); // Set the page first
         setDropdownOpen(!dropdownOpen); // Toggle the dropdown visibility
     };
 
@@ -23,7 +24,7 @@ const Sidebar: React.FC<SidebarProps> = ({ setPage }) => {
             <ul>
                 {/* Button for Axie Infinity with dropdown */}
                 <li>
-                    <button onClick={handleDropdownToggle}>
+                    <button onClick={() => handleDropdownToggle('Axie Infinity-2024.html')}>
                         Axie Infinity
                     </button>
                     {dropdownOpen && (
