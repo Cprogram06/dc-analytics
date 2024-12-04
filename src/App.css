@@ -1,143 +1,155 @@
 /* src/App.css */
 
+/* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 .container {
-    display: flex;
-    height: 100vh; /* Full viewport height */
-}
-
-.bar-chart-icon {
-  position: absolute; /* Positioned behind the text */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust position */
-  width: 100%; /* Take full width of h2 */
-  height: auto; /* Maintain aspect ratio */
-  max-width: 100px; /* Set a max width if needed */
-  opacity: 0.2; /* Make the icon semi-transparent */
-  z-index: 0; /* Ensure it's behind the text */
-  animation: scaleIn 0.5s ease forwards; /* Apply the animation */
-}
-
-/* Container for Sidebar */
-.sidebar-container {
-  position: relative;
-}
-
-/* Sidebar Styles */
-.sidebar {
-  width: 240px;
-  background: linear-gradient(135deg, #0b1a3b, #182848);
-  color: white;
-  padding: 20px;
   display: flex;
-  flex-direction: column;
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  transform: translateX(-100%); /* Initially hidden */
-  transition: transform 0.3s ease-in-out;
-  z-index: 1000;
+  height: 100vh; /* Full viewport height */
+}
+
+/* Styling for BarChart Icon */
+.bar-chart-icon {
+position: absolute; /* Positioned behind the text */
+top: 50%; /* Center vertically */
+left: 50%; /* Center horizontally */
+transform: translate(-50%, -50%); /* Adjust position */
+width: 100%; /* Take full width of h2 */
+height: auto; /* Maintain aspect ratio */
+max-width: 100px; /* Set a max width if needed */
+opacity: 0.2; /* Make the icon semi-transparent */
+z-index: 0; /* Ensure it's behind the text */
+animation: scaleIn 0.5s ease forwards; /* Apply the animation */
+}
+
+/* Sidebar Container */
+.sidebar-container {
+position: relative;
+}
+
+/* Sidebar Styling */
+.sidebar {
+width: 240px;
+background: linear-gradient(135deg, #0b1a3b, #182848);
+color: white;
+padding: 20px;
+display: flex;
+flex-direction: column;
+position: fixed;
+left: 0;
+top: 0;
+bottom: 0;
+transform: translateX(-100%); /* Initially hidden */
+transition: transform 0.3s ease-in-out;
+z-index: 1000;
 }
 
 /* Sidebar when open */
 .sidebar-container.open .sidebar {
-  transform: translateX(0); /* Slide in */
+transform: translateX(0); /* Slide in */
 }
 
 /* Burger Menu Button */
 .burger-menu {
-  display: none; /* Hidden by default */
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  background-color: transparent;
-  border: none;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 1100;
+display: none; /* Hidden by default */
+position: fixed;
+top: 15px;
+left: 15px;
+background-color: transparent;
+border: none;
+color: white;
+font-size: 2rem;
+cursor: pointer;
+z-index: 1100;
 }
 
-/* Responsive Styles for Mobile */
-@media (max-width: 768px) {
-  .burger-menu {
-    display: block; /* Show burger menu on smaller screens */
-  }
+/* Burger Icon Transitions (Add animations if you want) */
+.burger-menu:focus {
+outline: none;
+}
 
-  .sidebar {
-    width: 200px; /* Adjust size for smaller devices */
-  }
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+.burger-menu {
+  display: block; /* Show burger menu on smaller screens */
+}
+
+.sidebar {
+  width: 200px; /* Adjust sidebar width on mobile */
+}
+
+.container {
+  flex-direction: column; /* Stack content and sidebar on mobile */
+}
 }
 
 /* Optional overlay when sidebar is open */
 .sidebar-container.open::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 900;
+content: '';
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.5);
+z-index: 900;
 }
 
-
+/* Content Area */
 .content {
-  flex: 1;
-  display: flex;
-  align-items: stretch;
-  justify-content: stretch;
-  padding: 0; /* Remove padding for full coverage */
+flex: 1;
+display: flex;
+align-items: stretch;
+justify-content: stretch;
+padding: 0; /* Full coverage */
 }
 
 .content iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
+width: 100%;
+height: 100%;
+border: none;
 }
 
+/* Keyframes for Animation (Growing Bars) */
 @keyframes growRight {
-  0% {
-      width: 0; /* Start with width 0 */
-      opacity: 0; /* Start invisible */
-  }
-  100% {
-      width: 4; /* Final width of the bars */
-      opacity: 1; /* Fully visible */
-  }
+0% {
+    width: 0; /* Start with width 0 */
+    opacity: 0; /* Start invisible */
+}
+100% {
+    width: 4; /* Final width of the bars */
+    opacity: 1; /* Fully visible */
+}
 }
 
 .bar {
-  transition: width 0.5s ease, opacity 0.5s ease; /* Smooth transition */
-  opacity: 0; /* Initially set opacity to 0 */
+transition: width 0.5s ease, opacity 0.5s ease; /* Smooth transition */
+opacity: 0; /* Initially set opacity to 0 */
 }
 
 .bar1 {
-  animation: growRight 0.5s ease forwards; /* Animate first bar */
+animation: growRight 0.5s ease forwards; /* Animate first bar */
 }
 
 .bar2 {
-  animation: growRight 0.5s ease forwards; /* Animate second bar */
-  animation-delay: 0.1s; /* Delay for staggered effect */
+animation: growRight 0.5s ease forwards; /* Animate second bar */
+animation-delay: 0.1s; /* Delay for staggered effect */
 }
 
 .bar3 {
-  animation: growRight 0.5s ease forwards; /* Animate third bar */
-  animation-delay: 0.2s; /* Delay for staggered effect */
+animation: growRight 0.5s ease forwards; /* Animate third bar */
+animation-delay: 0.2s; /* Delay for staggered effect */
 }
 
 .bar4 {
-  animation: growRight 0.5s ease forwards; /* Animate fourth bar */
-  animation-delay: 0.3s; /* Delay for staggered effect */
+animation: growRight 0.5s ease forwards; /* Animate fourth bar */
+animation-delay: 0.3s; /* Delay for staggered effect */
 }
