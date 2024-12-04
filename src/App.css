@@ -47,14 +47,14 @@ position: fixed;
 left: 0;
 top: 0;
 bottom: 0;
-transform: translateX(-100%); /* Initially hidden */
+transform: translateX(0); /* Make sidebar visible by default on desktop */
 transition: transform 0.3s ease-in-out;
 z-index: 1000;
 }
 
-/* Sidebar when open */
+/* Sidebar when open (Mobile) */
 .sidebar-container.open .sidebar {
-transform: translateX(0); /* Slide in */
+transform: translateX(0); /* Slide in on mobile */
 }
 
 /* Burger Menu Button */
@@ -79,6 +79,11 @@ z-index: 1100;
 
 .sidebar {
   width: 200px; /* Adjust sidebar width on mobile */
+  transform: translateX(-100%); /* Hide sidebar off-screen by default on mobile */
+}
+
+.sidebar-container.open .sidebar {
+  transform: translateX(0); /* Slide in on mobile */
 }
 
 /* Sidebar Button Styles */
