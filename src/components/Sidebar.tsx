@@ -1,5 +1,4 @@
-// src/components/Sidebar.tsx
-import React from 'react';
+import React, { useState } from 'react';
 import BarChartIcon from './BarChartIcon'; // Import the updated icon component
 
 type SidebarProps = {
@@ -7,6 +6,12 @@ type SidebarProps = {
 };
 
 const Sidebar: React.FC<SidebarProps> = ({ setPage }) => {
+    // State to control dropdown visibility
+    const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+    // Toggle the dropdown visibility
+    const toggleDropdown = () => setDropdownOpen(!isDropdownOpen);
+
     return (
         <aside className="sidebar">
             <div className="sidebar-header">
@@ -16,7 +21,22 @@ const Sidebar: React.FC<SidebarProps> = ({ setPage }) => {
                 </h2>
             </div>
             <ul>
-                <li><button onClick={() => setPage('Axie Infinity-2024.html')}>Axie Infinity</button></li>
+                {/* Dropdown menu for Axie Infinity */}
+                <li>
+                    <button onClick={toggleDropdown}>
+                        Axie Infinity
+                    </button>
+                    {isDropdownOpen && (
+                        <ul className="dropdown-menu">
+                            <li><button onClick={() => setPage('Axie Infinity-2024.html')}>Axie Infinity Main</button></li>
+                            <li><button onClick={() => setPage('Axie Infinity PH-2024.html')}>Axie PH</button></li>
+                            <li><button onClick={() => setPage('Axie Infinity PT-2024.html')}>Axie PT</button></li>
+                            <li><button onClick={() => setPage('Axie Infinity ES-2024.html')}>Axie ES</button></li>
+                        </ul>
+                    )}
+                </li>
+
+                {/* Other Sidebar Menu Items */}
                 <li><button onClick={() => setPage('Apeiron-2024.html')}>Apeiron</button></li>
                 <li><button onClick={() => setPage('⚡ CyberKongz ⚡-2024.html')}>CyberKongz</button></li>
                 <li><button onClick={() => setPage('Forgotten Runes Wizard Cult-2024.html')}>Forgotten Runiverse</button></li>
