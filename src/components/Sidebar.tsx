@@ -10,7 +10,7 @@ const Sidebar: React.FC<SidebarProps> = ({ setPage }) => {
     const [isOpen, setIsOpen] = useState(false); // State to toggle sidebar
 
     const toggleSidebar = () => {
-        setIsOpen(!isOpen);
+        setIsOpen(isOpen);
     };
 
     return (
