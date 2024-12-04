@@ -41,6 +41,11 @@ const Sidebar: React.FC<SidebarProps> = ({ setPage }) => {
                     {dropdownOpen && (
                         <ul className="dropdown-menu">
                             <li>
+                                <button onClick={() => handleButtonClick('Axie Infinity-2024.html')}>
+                                    Axie Infinity Main
+                                </button>
+                            </li>
+                            <li>
                                 <button onClick={() => handleButtonClick('Axie Infinity PH-2024.html')}>
                                     Axie PH
                                 </button>
