@@ -5,7 +5,7 @@ import Content from './components/Content';
 import './App.css';
 
 const App: React.FC = () => {
-    const [page, setPage] = useState<string>('Axie Infinity-2024.html'); // Default to 'home.html'
+    const [page, setPage] = useState<string>('Axie Infinity-2025.html'); // Default to 'home.html'
 
     return (
         <div className="container">
