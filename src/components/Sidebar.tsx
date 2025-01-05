@@ -32,7 +32,7 @@ const Sidebar: React.FC<SidebarProps> = ({ setPage }) => {
                 <li>
                     <button
                         onClick={() => {
-                            handleButtonClick('Axie Infinity-2024.html'); // Set page and close dropdown if needed
+                            handleButtonClick('Axie Infinity-2025.html'); // Set page and close dropdown if needed
                             handleDropdownToggle(); // Toggle dropdown visibility
                         }}
                     >
@@ -41,17 +41,17 @@ const Sidebar: React.FC<SidebarProps> = ({ setPage }) => {
                     {dropdownOpen && (
                         <ul className="dropdown-menu">
                             <li>
-                                <button onClick={() => handleButtonClick('Axie Infinity PH-2024.html')}>
+                                <button onClick={() => handleButtonClick('Axie Infinity PH-2025.html')}>
                                     Axie PH
                                 </button>
                             </li>
                             <li>
-                                <button onClick={() => handleButtonClick('Axie Infinity PT-2024.html')}>
+                                <button onClick={() => handleButtonClick('Axie Infinity PT-2025.html')}>
                                     Axie PT
                                 </button>
                             </li>
                             <li>
-                                <button onClick={() => handleButtonClick('Axie Infinity ES-2024.html')}>
+                                <button onClick={() => handleButtonClick('Axie Infinity ES-2025.html')}>
                                     Axie ES
                                 </button>
                             </li>
