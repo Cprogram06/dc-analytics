@@ -71,6 +71,7 @@ const Sidebar: React.FC<SidebarProps> = ({ setPage }) => {
                 <li><button onClick={() => setPage('Ragnarok_ Monster World-2025.html')}>Ragnarok Montster World</button></li>
                 <li><button onClick={() => setPage('Ronin Creator Discord-2025.html')}>Ronin Creator Discord</button></li>
                 <li><button onClick={() => setPage('Ronin Network-2025.html')}>Ronin Network</button></li>
+                <li><button onClick={() => setPage('Ronin Builders-2025.html')}>Ronin Builders</button></li>
                 <li><button onClick={() => setPage('The Machines Arena-2025.html')}>The Machines Arena</button></li>
                 <li><button onClick={() => setPage('Wild Forest-2025.html')}>Wild Forest</button></li>
             </ul>
