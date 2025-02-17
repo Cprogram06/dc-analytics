@@ -29,7 +29,7 @@ body {
 
 /* Sidebar header */
 .sidebar-header {
-  margin-bottom: 40px; /* Space below the logo */
+  margin-bottom: 20px; /* Space below the logo */
   position: relative; /* Required for absolute positioning of the icon */
 }
 
